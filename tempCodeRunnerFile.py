@@ -1,1 +1,0 @@
-course.upper() to covert all to upper

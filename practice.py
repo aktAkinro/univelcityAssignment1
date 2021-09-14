@@ -1,9 +1,6 @@
-# bla bla
-
 # name = input('what is your name ')
 # color = input('what is your favorite color ')
 # print(name + ' likes ' + color)
-
 
 # height = input('what is your height: ')
 # weight = input('what is your weight: ')
@@ -14,7 +11,6 @@
 # weight_in_kg = int(weight_in_pounds) * 0.453592
 # print(weight_in_kg) 
 
-
 # course = 'Hello my people'
 #         # 0123456789......
 #         # 0...........-3-2-1
@@ -23,15 +19,10 @@
 # print(course[0:5])
 # 0 is the first value, -1 represents the last value. negative is starting from behind
 
-
-
-
-
 # len is a built in function used to check the length of your value
 
 # course = "python for you"
 # print(len(course))
-
 
 # methods - functions specific to string. access them using "."
 
@@ -40,8 +31,6 @@
 # course = "hello peopple"
 # print(course.upper())
 # print(course.lower())
-
-
 
 # find method
 
@@ -73,10 +62,8 @@
 # x = 2.9
 # print(abs(-2.9))
 
-
 # to import math module so you have access to mathematical functions simply type import_math then put math.
 # import math
-
 
 # ceil function would round up and floor would remove decimal
 # import_math
