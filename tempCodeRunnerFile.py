@@ -1,2 +1,1 @@
-area = (s(s-a)(s-b)(s-c))**0.5
-print(area)
+course.upper() to covert all to upper
