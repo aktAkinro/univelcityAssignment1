@@ -10,8 +10,8 @@
 
 
 
-# name = "akinro"
-# print(name[3])
+name = "akinro"
+print(name[3])
 
 # # ngative indexing is from back to front opposite of positive or normal indexing. this can be used if you want to get the last element in a string and you dont know how long it is
 
@@ -146,17 +146,17 @@
 
 # # split and join. 
 # # split
-# myfullname = "akinro akintunde akolawole"
-# name_list = myfullname.split()
-# # split turns it to a list and each item in the list has an index starting from zero [0,1,2] [akinro, akintunde, akolawole]
-# print(name_list[0])
-# print(name_list[1])
-# print(name_list[2])
+myfullname = "akinro akintunde akolawole"
+name_list = myfullname.split()
+# split turns it to a list and each item in the list has an index starting from zero [0,1,2] [akinro, akintunde, akolawole]
+print(name_list[0])
+print(name_list[1])
+print(name_list[2])
 
 #join
-# mynamelist = ['akinro', 'akintunde' , 'akolawole']
-# joined = " ".join(mynamelist)
-# print(joined)
+mynamelist = ['akinro', 'akintunde' , 'akolawole']
+joined = " ".join(mynamelist)
+print(joined)
 
 #write a program to change "I am a boy" to "i-am-a-boy"
 
