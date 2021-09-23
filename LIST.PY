@@ -131,6 +131,48 @@ print(ab_)
 # print(a[::-2])
 
 
+# Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. 
+# Print the decimal value of each fraction on a new line with  places after the decimal.
+
+
+import time
+from decimal import Decimal
+
+
+
+list1 = [1,1,0,-1,-1]
+positive = []
+negative = []
+zero = []
+for i in list1:
+     if i > 0:
+         positive.append(i)
+     elif i < 0:
+         negative.append(i)
+     else: 
+         zero.append(i)
+
+
+ratio_p = (len(positive)) / len(list1)
+ratio_n = (len(negative)) / len(list1)
+ratio_z = (len(zero)) / len(list1)
+import decimal
+
+print(ratio_p)
+print(ratio_n)
+print(ratio_z)
+print('{:.6f}'.format(ratio_p))
+print('{:.6f}'.format(ratio_n))
+print('{:.6f}'.format(ratio_z))
+
+
+# print(round(Decimal(ratio_p),6))
+
+
+
+
+
+
 
 
 
