@@ -137,6 +137,18 @@
 
 
 
+english = {1,2,3,4,5,6,7,8,9}
+french = {10,1,2,3,11,21,55,6,8}
+
+# print(english.difference(french))
+# print(french.difference(english))
+
+new = french.symmetric_difference(english)
+
+print(len(new))
+
+
+
 
 
 
