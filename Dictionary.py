@@ -31,6 +31,8 @@
 # print(my_diction)
 # dic[k] = val 
 
+
+
 #  to find out all the keys available 
 
 #   get an input from the user ask for his course and score. add his course to courses and his score to score
@@ -76,8 +78,8 @@
 # pop scores out first
 
 # var = student_data.pop("scores")
-# # print(var)
-# # print(student_data)
+# print(var)
+# print(student_data)
 # student_data["result"] = var 
 # print(student_data)
 
