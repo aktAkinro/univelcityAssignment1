@@ -17,12 +17,25 @@
 # # extend
 
 
+
+
+# append is used to add an element to an already existing list.
+#  you can append a list to another list but
+#  the appended list would be added as an element in the new list
+
+
+# extend is used to add a new list not as an element but as an 
+# extension to the already existing list.
+
 # a = [1,2,3,4]
 # b = [2,4,6,8]
 
-# #a.append(12)
+# a.append(12)
 # a.extend(b)
 # print(a)
+
+
+# Question
 
 # # create a list of usernames. then write a program to get input from user requesting for his first name and last name, generate a username for him. the user name should comprise of first 2 words
 # #  of his last name and last two words of his first name. Add his username and print an output telling him his account has been created
@@ -33,7 +46,7 @@
 
 # usernames = ["aktt", "btah", "fgst"]
 
-# firstname = input("What is your firstname: ").title()
+# firstname = input("What is your firstname?: ").title()
 # lastname = input("What is your lastname: ")
 
 # username = lastname[0] + lastname[1] + lastname[2] + firstname [-2] + firstname [-1]
@@ -81,10 +94,14 @@
 # print(c_list)
 
 
+
+
+
+
 # remove - removes item with specified value
 
-# a = [0,1,2,3,78]
-# a.remove(78)
+# a = [0,1,2,3,78,"blessiknow","aktofficial"]
+# a.remove("blessiknow")
 # print(a)
 
 
@@ -93,6 +110,7 @@
 # ab = [1,34,34,78]
 # ab_ = ab.pop(-1)
 # print(ab_)
+
 
 # insert - takes element and puts it into a specified position in a list. it takes in (index,value youwant to insert)
 

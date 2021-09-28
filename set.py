@@ -2,7 +2,7 @@
 
 # discard vs remove
 
-# the remove() raises error when specified element doesnt exist while discard wouldnt
+# the remove() raises error when specified element doesnt exist while discard wouldnt. discard would print everything
 
 # s = {"True", "Born", "Time", 5600}
 
@@ -25,6 +25,7 @@
 # a = {"True", "Born", "place", 5600}
 # b = {"True", "orn", "plce", 5}
 
+
 # u = a.union(b)
 # print(u)
 
@@ -36,8 +37,6 @@
 
 # qe = q.intersection(e)
 # print(qe)
-
-
 
 
 
@@ -137,15 +136,15 @@
 
 
 
-english = {1,2,3,4,5,6,7,8,9}
-french = {10,1,2,3,11,21,55,6,8}
+# english = {1,2,3,4,5,6,7,8,9}
+# french = {10,1,2,3,11,21,55,6,8}
 
-# print(english.difference(french))
-# print(french.difference(english))
+# # print(english.difference(french))
+# # print(french.difference(english))
 
-new = french.symmetric_difference(english)
+# new = french.symmetric_difference(english)
 
-print(len(new))
+# print(len(new))
 
 
 
