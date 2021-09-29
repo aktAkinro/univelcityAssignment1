@@ -64,5 +64,5 @@ from datetime import datetime
 
 #  strif time helps you convert the time to a string which is a more readable way.
 
-date = datetime.now()
-print(datetime.striftime(date,"%A, %d %B %Y"))
+# date = datetime.now()
+# print(datetime.striftime(date,"%A, %d %B %Y"))
