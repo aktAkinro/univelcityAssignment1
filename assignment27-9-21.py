@@ -29,6 +29,7 @@
 
 
 
+
 # print("Enter triangle sides: ")
 # x=int(input("x: "))
 # y=int(input("y: "))
@@ -44,16 +45,16 @@
 
 
 
-a = [{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}]
-sorted_list = sorted(a, key = lambda k:k["color"] )
-print(sorted_list)
+# a = [{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}]
+# sorted_list = sorted(a, key = lambda k:k["color"] )
+# print(sorted_list)
 
 
 
 
 
 
-
+## .split converts it to list
 # num_qNewspaper = int(input(""))
 # qNewspaper = input("")
 # num_eNewspaper = int(input(""))
