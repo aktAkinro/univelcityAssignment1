@@ -53,7 +53,7 @@ transfer = "t"
 while setup:
     if Bankactivity == deposit:
       Deposit = int(input("How much would you like to Deposit?:\n"))
-      if  Deposit > 0:
+      if  Deposit >= 0:
         print("Transaction Successful")
         new_balance = Deposit + default_balance
         print("Hello {},\n\t You have successfully credited your account and Your account balance is N{}".format(bank_user,new_balance))
