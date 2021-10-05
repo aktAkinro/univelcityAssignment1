@@ -43,8 +43,8 @@
 
 # # # when we have [2:8:2] it means move from index 2 to 8 in steps of 2
 
-# # new_string = "blue sky"
-# # print(new_string[2:8:2])
+# new_string = "blue sky"
+# print(new_string[2:8:2])
 # # print(new_string[2:5])
 # # print(new_string[:5])
 # # print(new_string[2:])
@@ -107,8 +107,8 @@
 # # string methods
 # #title turns first letter of all words to capital
 
-# # name = input('who are you')
-# # print(name.title())
+# name = input('who are you')
+# print(name.title())
 
 # # name2 = input('who  you').title()
 # # print(name2)
@@ -116,13 +116,13 @@
 
 # # upper() converts the whole string to uppercase, lower is opposite
 
-# # name = "Jack".startswith("J")
-# # print(name)
+# name = "Jack".startswith("J")
+# print(name)
 
-# # name = "Jack".endswith("J")
-# # print(name)
+# name = "Jack".endswith("J")
+# print(name)
 
-# # justreg = "JACK".lower()
+# justreg = "JACK".lower()
 # # print(justreg)
 
 # # title = "jack".title()
@@ -132,7 +132,7 @@
 
 # #index vs find they both look for the position of a value but find gives -1 if it doesnt find it while index gives error
 
-# # print(justreg.find('a'))
+# print(justreg.find('A'))
 # # print(justreg.index('a'))
 
 # # if we find J we wont see it since we have j in small letters
@@ -149,6 +149,7 @@
 # myfullname = "akinro akintunde akolawole"
 # name_list = myfullname.split()
 # # split turns it to a list and each item in the list has an index starting from zero [0,1,2] [akinro, akintunde, akolawole]
+# print(name_list)
 # print(name_list[0])
 # print(name_list[1])
 # print(name_list[2])
@@ -166,8 +167,8 @@
 # print(wordsplit)
 
 
-# wordd = 'i am a boy'.replace(" ","-")
-# print(wordd)
+#wordd = 'i am a boy'.replace(" ","-")
+#print(wordd)
 
 
 
@@ -184,10 +185,10 @@
 
 # perelyrics = """Cos i want to dance with you pere 
 # omo ma lo ro pe mo pERE if your boyfriend 
-# call me ma PERE""".upper()
+# call me ma PERE""".lower()
 
 # print(perelyrics)
-# lyrics = input('input your search: \n')
+# lyrics = input('input your search: \n').lower()
 # print(lyrics)
 # print(perelyrics.count(lyrics))
 
@@ -204,7 +205,10 @@
 
 # strip removes spaces before or after a string
 
-
+# akt = " abcc ".strip()
+# kat = "city"
+# atk = akt + kat
+# print(atk)
 
 
 
