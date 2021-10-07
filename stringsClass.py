@@ -212,3 +212,14 @@
 
 
 
+name = "Esther" + "uzoma"
+surname = ' uzoma'
+
+print(name + surname)
+
+username1 = name[:2] + name[-2:]
+print(username1)
+
+username2 = name[::2]
+print(username2)
+
