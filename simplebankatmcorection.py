@@ -4,6 +4,8 @@ import time
 user_data = {}
 keep_running = True
 logged_in = True
+transaction_log = {}
+
 
 
 while keep_running:
@@ -11,6 +13,12 @@ while keep_running:
     if user_activity=='s':
         name = input("Name:\n>>")
         pin = input("Enter 4 digit pin:\n>>")
+
+        if pin.isdigit() and len(pin) == 4:
+            print("You successfully logged in!")
+        else:
+            print("Only 4 digits allowed")
+            break
         
 
             
@@ -39,6 +47,8 @@ while keep_running:
         pin = input("Enter 4 digit pin:\n>>")
         
     while logged_in:
+        credit = []
+        debit = []
         account_details = user_data.get(account_num, False)
         if account_details and account_details.get('pin')==pin:
             action = input(f"""Welcome, {account_details.get('name')}!
@@ -51,7 +61,10 @@ What would you like to do?
 Press any other key to quit\n>>""").lower()
             if action == '1':
                 amount = float(input("Enter amount to withdraw\n>>"))
-                
+                user_data[account_num]["balance"] -= amount
+                data_ = [{"amount": amount},{"alert type":"debit"},{"transaction type":"withdraw"}]
+                transaction_log[account_num].append(data_)
+                print(f"***Debit Alert*** ***Withdrawal*** ***Amount: {amount}***")
                 if amount >= account_details.get('balance', 0):
                     time.sleep(2)
                     print("Insufficiant funds")
@@ -64,6 +77,9 @@ Press any other key to quit\n>>""").lower()
                         break
                 else:
                     account_details['balance']-=amount
+                    user_data[account_num] = []
+                    data_ = [{"amount": amount},{"alert type":"debit"},{"transaction type":"withdraw"}]
+                    transaction_log[account_num].append(data_)
                     print('Please take your cash')
                     progress = input("Enter p to do something else and any key to quit.\n>>").lower()
                     if progress == 'p':
@@ -72,7 +88,9 @@ Press any other key to quit\n>>""").lower()
                         break
             elif action == '2':
                 amount = float(input("Enter amount to deposit\n>>"))
-                
+                transaction_log[account_num]["balance"] += amount
+                data_ = [{"amount": amount},{"alert type":"credit"},{"transaction type":"deposit"}]
+                transaction_log[account_num].append(data)
                 
                 account_details['balance']+=amount
                 print('Deposit complete')
@@ -84,7 +102,7 @@ Press any other key to quit\n>>""").lower()
             elif action == '3':
                 amount = float(input("Enter amount to transfer\n>>"))
                 recepient_account = input("Enter destination account number\n>>")
-                
+                print(f"***Debit Alert*** ***Transfer*** ***Amount: {amount}***")
                 recepient = user_data.get(recepient_account, False)
                 if recepient:
                     if amount >= account_details.get('balance', 0):
@@ -93,21 +111,38 @@ Press any other key to quit\n>>""").lower()
                         account_details['balance']-=amount
                         recepient['balance']+=amount
                         print("Transfer successful. Gerrout!")
+                        # transaction_log = {}
+                        # transaction_log[account_num]["balance"] -= amount
+                        # data_ = [{"amount": amount},{"alert type":"debit"},{"transaction type":"withdraw"}]
+                        # transaction_log[account_num].append(data_)
                         progress = input("Enter p to do something else and any key to quit.\n>>").lower()
                         if progress == 'p':
                             continue
                         else:
                             break
-                # elif action == '4':
-                #         print(account_details)  
-                else:
-                    print('No active customer for this account number. Gerrout!')
-                    progress = input("Enter p to do something else and any key to quit.\n>>").lower()
+            elif action == '4':
+                    print("Getting your account balance....")
+                    time.sleep(1)
+                    print(f"Your Account Balance is NGN{user_data[account_num]['balance']}\n")
                     if progress == 'p':
                         continue
                     else:
-                        break         
-        else:
-            print("Please enter a valid account number and pin")
+                        break
+            elif action == '5':
+                    print("hi")
+                    if progress == 'p':
+                        continue
+                    else:
+                        break
+
+            else:
+                print('incorrect input')
+                progress = input("Enter p to do something else and any key to quit.\n>>").lower()
+                if progress == 'p':
+                    continue
+                else:
+                    break         
+    else:
+        print("Please enter a valid account number and pin")
 
                     
