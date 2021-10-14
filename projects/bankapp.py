@@ -1,5 +1,6 @@
 import random
 import time
+import ast
 
 user_data = {}
 transaction_record = {}
@@ -22,6 +23,11 @@ while keep_running:
     if user_activity=='s':
         name = input("Name:\n>>").title()
         pin = input("Enter 4 digit pin:\n>>")
+
+        # with open('BankInfo.txt', 'r') as bankinfo:
+        #     banker = bankinfo.read()
+        #     a = ast.literal_eval(banker)
+
 # to randomly pick out 10 digits for account number. starting from 9.
 #  the acc = "9" ensures that the first would always be 9 while you extend 9 digits to it       
         num = [str(i) for i in range(10)]
@@ -192,7 +198,7 @@ print(user_data)
 print(transaction_record)
 
 
-import ast
+
 
 
 with open('BankInfo.txt', 'w') as bankinfo:
@@ -204,7 +210,7 @@ my_file.write(f"{trans_data}")
 # with open('BankInfo.txt', 'r') as bankinfo:
 #     banker = bankinfo.read()
 #     a = ast.literal_eval(banker)
-#     print(a)
 
-my_file = open("BankInfo.txt", mode = "r")
-my_file.read()
+
+# my_file = open("BankInfo.txt", mode = "r")
+# my_file.read()
