@@ -34,8 +34,7 @@ def login_view(request):
             return redirect('attendance:all_books')
         else:
             messages.warning(request, 'Please enter a valid username and password')
-            
-        
+                 
     return render(request, 'registration/login.html')
 
 
@@ -63,7 +62,5 @@ def signup_view(request):
                 messages.warning(request, "Password should contain at least:\n A number\n A lowercase letter [a-z] \n A uppercase letter [A-Z]")
         else:
             messages.warning(request, 'Please enter matching passwords') #return a message if the passworods are not correct
-        
-        
-        
+       
     return render(request, 'registration/signup.html')

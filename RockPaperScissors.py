@@ -54,17 +54,22 @@ player = input("what do you chose?: ").lower()
 choices = ["r","p","s"]
 random.shuffle(choices)
 com_choice = random.choice(choices)
+attempt = 0
+limit = 3
 
-if player in choices:
-    if(player == "r" and com_choice == "s") or (player == "p" and com_choice == "s") or (player == "s" and com_choice == "p"):
-        print("you win")
-    elif (com_choice == "r" and player == "s") or (com_choice == "p" and player == "s") or (com_choice == "s" and player == "p"):
-        print("computer win")
+
+while attempt < limit:
+    attempt = attempt + 1
+    if player in choices:
+        if(player == "r" and com_choice == "s") or (player == "p" and com_choice == "s") or (player == "s" and com_choice == "p"):
+            print("you win")
+        elif (com_choice == "r" and player == "s") or (com_choice == "p" and player == "s") or (com_choice == "s" and player == "p"):
+            print("computer win")
+        else:
+            print("its a tie")
+
     else:
-        print("its a tie")
-
-else:
-    print("Invalid response.  Input!")
+        print("Invalid response.  Input!")
 
 
 
