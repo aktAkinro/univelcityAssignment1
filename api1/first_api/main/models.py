@@ -13,6 +13,8 @@ def get_cohort():
 
 
 
+
+
 class Student(models.Model):
     first_name = models.CharField(max_length=300)
     cohort = models.CharField(max_length=300, default=get_cohort())
@@ -21,6 +23,10 @@ class Student(models.Model):
 
     def __str__(self):
         return self.first_name
+
+    @property
+    def book(self):
+        return self.books.all().values("title")
 
 class Book(models.Model):
     title = models.CharField(max_length=300)

@@ -5,9 +5,11 @@ from rest_framework.decorators import api_view
 
 from .serializers import Bookserializer, StudentSerializer
 from .models import Book, Student
+from drf_yasg.utils import swagger_auto_schema
 
 # Create your views here.
 
+@swagger_auto_schema(methods=['POST'], request_body=StudentSerializer())
 @api_view(['GET', 'POST'])
 def students(request):
 
@@ -43,7 +45,7 @@ def students(request):
 
             return Response(error, status=status.HTTP_400_BAD_REQUEST)
 
-
+@swagger_auto_schema(methods=['POST'], request_body=Bookserializer())
 @api_view(['GET', 'POST'])
 def books(request):
 
@@ -80,6 +82,8 @@ def books(request):
             return Response(error, status=status.HTTP_400_BAD_REQUEST)
 
 # to view just one book, PUT is same as update. since it is just one item we would be able to get it, update and delete it
+
+@swagger_auto_schema(methods=['PUT','DELETE'], request_body=Bookserializer())
 @api_view (['GET','PUT','DELETE'])
 def book_detail(request,book_id):
 
@@ -140,7 +144,7 @@ def book_detail(request,book_id):
 
 
 
-
+@swagger_auto_schema(methods=['PUT', 'DELETE'], request_body=StudentSerializer())
 @api_view (['GET','PUT','DELETE'])
 def student_detail(request,student_id):
 
