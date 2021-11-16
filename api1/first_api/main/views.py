@@ -208,6 +208,8 @@ def cohort_list(request):
     if request.method == 'GET':
         cohorts = Student.objects.values_list("cohort", flat=True).distinct() # flat= true gives us a list rather than a list of tupple
 
-        data = {cohort:Student.objects.filter(cohort=cohort).values() for cohort in cohorts} # if value() is left it shows every detail, if i use value("first_name") it shows just name
+        data = {cohort:{
+            "data":Student.objects.filter(cohort=cohort).count(),
+            "count": Student.objects.filter(cohort=cohort).values("first_name")} for cohort in cohorts} # if value() is left it shows every detail, if i use value("first_name") it shows just name. the .values replaces the serializer
 
-        return Response({}, status=status.HTTP_204_NO_CONTENT)
+        return Response(data, status=status.HTTP_200_OK)
