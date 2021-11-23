@@ -15,19 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import permissions
-from rest_framework.decorators import schema
-from drf_yasg.views import get_schema_view
-from drf_yasg import openapi
+from rest_framework import permissions # new
+from drf_yasg.views import get_schema_view # new
+from drf_yasg import openapi # new
 
+    
 schema_view = get_schema_view(
     openapi.Info(
-        title = 'FIRST API',
-        default_version = 'v1',
-        description='Api documentation for our first api.',
-        terms_service= "",
-        contact=openapi.Contact(email="aktakinro@gmail.com"),
-        license=openapi.License(name = "MIT License")
+        title="FIRST API",
+        default_version="v1",
+        description="Api documentation for our first api.",
+        terms_of_service="",
+        contact=openapi.Contact(email="desmond@getmobile.tech"),
+        license=openapi.License(name="MIT License"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -35,7 +35,9 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("v1", include('main.urls')),
-    path("", schema_view.with_ui("swagger", cache_timeout=0),name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
+    path('v1/', include('main.urls')),
+    path('v1/', include('account.urls')),
+     #documentation
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
